@@ -17,14 +17,18 @@ title: "Paul Stanil Grasian - Ingénieur Cloud Azure"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Portfolio Cloud: Azure, DevOps, Terraform, SRE. AZ-104 certifié.
-twitter_username: username
+# twitter_username: username
 github_username: stanilpaul
 minimal_mistakes_skin: "air"
 search: true
 
+# IMPORTANT pour GitHub Pages (repo utilisateur)
+url: "https://stanilpaul.github.io"
+baseurl: ""   # vide car site à la racine
+
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -55,10 +59,11 @@ plugins:
   - jemoji
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-remote-theme 
 
 author:
   name   : "Paul Stanil Grasian"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/profile.jpg"
   bio    : "Ingénieur Cloud Azure (AZ‑104). DevOps, IaC (Terraform), CI/CD, SRE. Pratique quotidienne depuis déc. 2024."
   links:
     - label: "Website"
@@ -86,6 +91,14 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/stanilpaul"
 
+
+# AJOUTE CETTE PARTIE (collection)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+
 defaults:
   # _posts
   - scope:
@@ -95,7 +108,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
   # _pages
