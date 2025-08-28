@@ -10,10 +10,8 @@ toc_sticky: true
 classes: wide
 ---
 
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-  mermaid.initialize({ startOnLoad: true, theme: "neutral" });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script> mermaid.initialize({ startOnLoad: true, theme: "neutral" }); </script>
+
 
 <div class="notice--info">
 <strong>On apprend quoi avec ce projet ?</strong><br/>
@@ -32,53 +30,40 @@ classes: wide
   - Documenter clairement pour revue d’architecture et transfert de connaissance.
 
 ## 2) Architecture — Vue Ingénieur Cloud (Azure)
-```mermaid
-flowchart LR
-  subgraph Azure_Subscription[Azure Subscription]
-    subgraph RG[Resource Group]
-      TF[(Terraform)]
-      VM[Ubuntu Spot VM]
-      NSG[Network Security Group]
-      PIP[(Public IP)]
-      JV[Jenkins (service)]
-      DK[Docker Engine]
-      APP[App Container]
-      DB[(MySQL Container)]
-      VOL[(Azure Disk - Volume)]
-      AP[Apache (init Jenkins - démo)]
-      GH[GitHub Repo]
-      TF --> VM
-      VM <-->|attached| PIP
-      VM --- NSG
-      VM --> DK
-      DK --> APP
-      DK --> DB
-      DB --> VOL
-      VM --> JV
-      JV -->|webhook| GH
-      AP -. expose init pass .- JV
-    end
-  end
-  USER[Utilisateur Internet] -->|HTTP| APP
+<div class="mermaid"> flowchart LR subgraph Azure_Subscription[Azure Subscription] subgraph RG[Resource Group] TF[(Terraform)] VM[Ubuntu Spot VM] NSG[Network Security Group] PIP[(Public IP)] JV[Jenkins (service)] DK[Docker Engine] APP[App Container] DB[(MySQL Container)] VOL[(Azure Disk - Volume)] AP[Apache (init Jenkins - démo)] GH[GitHub Repo]
 
-  classDef az fill:#e6f3ff,stroke:#0078d4,color:#000,stroke-width:1px;
-  class VM,NSG,PIP,JV,DK,APP,DB,VOL,AP az;
+  TF --> VM
+  VM <-->|attached| PIP
+  VM --- NSG
+  VM --> DK
+  DK --> APP
+  DK --> DB
+  DB --> VOL
+  VM --> JV
+  JV -->|webhook| GH
+  AP -. expose init pass .- JV
+end
 
-  click GH "https://github.com/stanilpaul/docker-getting-started-devops-enhanced" "Repo GitHub" _blank
+USER[Utilisateur Internet] -->|HTTP| APP
 
-  sequenceDiagram
-  participant Dev as Développeur
-  participant GH as GitHub
-  participant JK as Jenkins
-  participant VM as Azure VM
-  participant DC as Docker Compose
+%% Styles
+classDef az fill:#e6f3ff,stroke:#0078d4,color:#000,stroke-width:1px;
+class VM,NSG,PIP,JV,DK,APP,DB,VOL,AP az;
 
-  Dev->>GH: git push (branche main)
-  GH-->>JK: Webhook (Push event)
-  JK->>VM: Checkout repo (Jenkinsfile)
-  JK->>VM: docker volume create (si besoin)
-  JK->>DC: docker-compose up -d (environnement de test)
-  JK->>VM: Attente MySQL (3306) + tests (yarn test)
-  JK->>DC: docker-compose down (préserve volumes)
-  JK->>DC: docker-compose up -d (déploiement prod)
-  JK-->>Dev: URL app (http://<IP_publique>:3000)
+%% Lien cliquable vers le repo
+click GH "https://github.com/stanilpaul/docker-getting-started-devops-enhanced" "Repo GitHub" _blank
+
+## 3) Pipeline — Vue Développeur (CI/CD)
+
+<div class="mermaid"> sequenceDiagram participant Dev as Développeur participant GH as GitHub participant JK as Jenkins participant VM as Azure VM participant DC as Docker Compose
+Dev->>GH: git push (branche main)
+GH-->>JK: Webhook (Push event)
+JK->>VM: Checkout repo (Jenkinsfile)
+JK->>VM: docker volume create (si besoin)
+JK->>DC: docker-compose up -d (environnement de test)
+JK->>VM: Attente MySQL (3306) + tests (yarn test)
+JK->>DC: docker-compose down (préserve volumes)
+JK->>DC: docker-compose up -d (déploiement prod)
+JK-->>Dev: URL app (http://<IP_publique>:3000)
+
+</div>
