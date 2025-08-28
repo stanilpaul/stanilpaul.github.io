@@ -1,0 +1,22 @@
+projects_highlight:
+  - image_path: /assets/images/p1_teaser.jpg
+    alt: "Projet 1"
+    title: "Pipeline CI/CD Azure + Terraform"
+    excerpt: "Infra Azure (Bicep/Terraform) et déploiements GitHub Actions."
+    url: "/projects/azure-cicd-terraform/"
+    btn_label: "Détails"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/p2_teaser.jpg
+    alt: "Projet 2"
+    title: "Containerisation & AKS"
+    excerpt: "Docker, Kubernetes (AKS), monitoring, secrets, ingress."
+    url: "/projects/aks-container-platform/"
+    btn_label: "Détails"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/p3_teaser.jpg
+    alt: "Projet 3"
+    title: "Observabilité & SRE"
+    excerpt: "Azure Monitor, Log Analytics, alertes, SLO, tableaux de bord."
+    url: "/projects/azure-observability-sre/"
+    btn_label: "Détails"
+    btn_class: "btn--primary"

@@ -1,9 +1,15 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "About"
-    url: /about/
+  - title: "Accueil"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "Compétences"
+    url: /competences/
+  - title: "Expériances"
+    url: /experiences/
+  - title: "Formations"
+    url: /formations/
+  - title: "CV"
+    url: /cv/
+  - title: "Contact"
+    url: /contact/    
