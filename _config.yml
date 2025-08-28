@@ -52,14 +52,13 @@ include:
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
+  - jekyll-include-cache
+  - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
   - jemoji
-  - jekyll-seo-tag
-  - jekyll-include-cache
-  - jekyll-remote-theme 
+  - jekyll-paginate
+  - jekyll-gist
 
 author:
   name   : "Paul Stanil Grasian"
