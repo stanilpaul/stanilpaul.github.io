@@ -4,15 +4,18 @@ excerpt: "Pipeline de bout en bout: Azure Spot VM via Terraform + Jenkins + Dock
 header:
   overlay_image: /assets/images/devops-ci-cd-jenkins-azure-terraform_hero.png
   teaser: /assets/images/devops-ci-cd-jenkins-azure-terraform_teaser.png
-# tags: [Azure, Terraform, Jenkins, Docker, CI/CD, DevOps, IaC, Linux, SRE]
-# toc: true
-# toc_sticky: true
-# classes: wide
+tags: [Azure, Terraform, Jenkins, Docker, CI/CD, DevOps, IaC, Linux, SRE]
+toc: true
+toc_sticky: true
+classes: wide
 ---
-# Documentation Technique – Projet DevOps Cloud Azure
+<video width="640" height="360" controls>
+<source src="{{ '/assets/videos/devopsproject1.mp4' | relative_url }}" type="video/mp4">
+</video>
+
+![devops-azure-terraform-project](https://github.com/user-attachments/assets/6eaeb72c-9dd8-4a98-90de-7f3ff33729e8)
 
 ## Introduction
-
 ### Contexte
 
 Ce projet a été réalisé pour accompagner un étudiant en Bac+5 dans le cadre de son projet de fin d’année en DevOps. L’objectif était de mettre en place une chaîne complète d’intégration et de déploiement continu (CI/CD) en exploitant les outils modernes du Cloud et de l’automatisation.
@@ -47,19 +50,23 @@ Prendre une application existante et construire une infrastructure DevOps permet
 
 ### Schéma d’architecture (vue simplifiée)
 
-```mermaid
-%% Example of sequence diagram
-  sequenceDiagram
-    Alice->>Bob: Hello Bob, how are you?
-    alt is sick
-    Bob->>Alice: Not so good :(
-    else is well
-    Bob->>Alice: Feeling fresh like a daisy
-    end
-    opt Extra response
-    Bob->>Alice: Thanks for asking
-    end
-```
+<!-- {% include mermaid.html %} -->
+
+<div style="overflow-x:auto;">
+  <a href="{{ '/assets/images/diagram-project1.svg' | relative_url }}" target="_blank">
+    <img src="{{ '/assets/images/diagram-project1.svg' | relative_url }}" 
+         style="width:100%; height:auto;" 
+         alt="Diagramme Infra Azure">
+  </a>
+</div>
+
+<div style="overflow-x:auto;">
+  <a href="{{ '/assets/images/diagram2-project1.svg' | relative_url }}" target="_blank">
+    <img src="{{ '/assets/images/diagram2-project1.svg' | relative_url }}" 
+         style="width:100%; height:auto;" 
+         alt="Diagramme Infra Azure">
+  </a>
+</div>
 
 ## Prérequis
 
@@ -95,7 +102,7 @@ Créer automatiquement l’infrastructure sur Azure.
   
 ### Procédure
 
-```
+```sh
 az login
 terraform init
 terraform plan
@@ -115,7 +122,7 @@ terraform apply
 
 ### Pipeline (extrait du Jenkinsfile)
 
-```
+```groovy
 pipeline {
     agent any
     environment {
@@ -139,7 +146,7 @@ pipeline {
 
 ### Dockerfile
 
-```
+```dockerfile
 FROM node:18-alpine
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -152,7 +159,7 @@ EXPOSE 3000
 
 ### Docker Compose
 
-```
+```yaml
 services:
   app:
     build: .
