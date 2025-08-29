@@ -20,3 +20,25 @@ projects_highlight:
     url: "/projects/azure-observability-sre/"
     btn_label: "Détails"
     btn_class: "btn--primary"
+
+skills:
+  - title: "☁️ Cloud & IaC"
+    excerpt: |
+      - Azure (RG, VNet, NSG, App Service, Functions, Storage, AKS, Key Vault, Monitor)
+      - Multi‑cloud: AWS, Oracle Cloud
+      - Terraform, Bicep
+  - title: "⚙️ DevOps & Automatisation"
+    excerpt: |
+      - GitHub Actions, Azure DevOps Pipelines, Jenkins
+      - Docker, Kubernetes (AKS), Helm
+      - Ansible, Bash/Python, Git/GitHub
+  - title: "🔐 Systèmes & Sécurité"
+    excerpt: |
+      - Windows Server, Linux
+      - RBAC, IAM, Secrets mgmt, Private Endpoints
+      - Azure Monitor, Log Analytics, App Insights, Alerting
+  - title: "🌍 Langues"
+    excerpt: |
+      - Français (C2)
+      - Anglais (C1)
+      - Tamoul (C2)
