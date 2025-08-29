@@ -96,9 +96,6 @@ Ce projet m’a permis d’explorer les fonctionnalités principales d’Azure D
 
 ## Déploiement Infrastructure & Application
 
-### Étapes principales
-
-
 ### CI/CD avec GitHub Actions
 
 1. Cloner l’application depuis GitHub Fork de [online-calculator-app](https://github.com/huzefaMD/online-calculator-app)
@@ -108,7 +105,8 @@ Ce projet m’a permis d’explorer les fonctionnalités principales d’Azure D
    - Génération du client ID + secret
    - Attribution des rôles nécessaires au niveau du resource group
 4. Configurer le pipeline YAML dans Azure DevOps :
-```yaml
+   
+```yml
 variables:
   buildConfiguration: 'Release'
 
@@ -129,6 +127,7 @@ steps:
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 ```
+
 5. Configurer la connexion GitHub ↔ Azure DevOps
    - Nouveau pipeline → GitHub → connexion au repo → sélection du YAML
    - Ajustement des valeurs (subscription, appName, etc.)
@@ -149,7 +148,7 @@ steps:
 - Type : Web App (calculatrice en ligne)
 - Langages : C# (95%), HTML, CSS, JS
 - Déploiement cible : Azure App Service (Linux)
-- Résultat : modification dans GitHub → pipeline → déploiement → mise en production immédiate
+- Résultat : modification dans GitHub → pipeline → déploiement → mise en production immédiate  
 👉 Démo : Un push sur GitHub met à jour la calculatrice en ligne en quelques minutes.
 
 ## Sécurité
