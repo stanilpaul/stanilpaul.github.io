@@ -9,11 +9,9 @@ toc: true
 toc_sticky: true
 classes: wide
 ---
-<video width="640" height="360" controls>
-<source src="{{ '/assets/videos/devopsproject1.mp4' | relative_url }}" type="video/mp4">
+<video autoplay muted loop playsinline preload="metadata" width="100%">
+  <source src="{{ '/assets/videos/devopsproject1.mp4' | relative_url }}" type="video/mp4">
 </video>
-
-![devops-azure-terraform-project](https://github.com/user-attachments/assets/6eaeb72c-9dd8-4a98-90de-7f3ff33729e8)
 
 ## Introduction
 ### Contexte
