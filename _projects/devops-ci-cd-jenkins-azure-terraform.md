@@ -9,11 +9,13 @@ toc: true
 toc_sticky: true
 classes: wide
 ---
+
+## Introduction
+
 <video autoplay muted loop playsinline preload="metadata" width="100%">
   <source src="{{ '/assets/videos/devopsproject1.mp4' | relative_url }}" type="video/mp4">
 </video>
 
-## Introduction
 ### Contexte
 
 Ce projet a été réalisé pour accompagner un étudiant en Bac+5 dans le cadre de son projet de fin d’année en DevOps. L’objectif était de mettre en place une chaîne complète d’intégration et de déploiement continu (CI/CD) en exploitant les outils modernes du Cloud et de l’automatisation.
