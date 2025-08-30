@@ -189,7 +189,7 @@ author_profile: false
     
   </div>
 
-    <div class="skills-accordion">
+    <div class="skills-accordion" id="skillsAccordion">
       <!-- Certifications -->
       <details data-key="certs">
         <summary>
@@ -209,7 +209,7 @@ author_profile: false
     <!-- Azure -->
     <details data-key="azure">
       <summary>
-        <span>Azure — Expertise (niveau ingénieur)</span>
+        <span>Azure Cloud— Expertise (niveau ingénieur)</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -532,5 +532,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
-
-<script> (function () { window.__skillSearchActive = false; document.addEventListener('DOMContentLoaded', function () { const input = document.getElementById('skillSearch'); const clearBtn = document.getElementById('clearSearch'); const meta = document.getElementById('searchMeta'); const items = Array.from(document.querySelectorAll('.skills-accordion details')); const norm = s => (s || '') .toLowerCase() .normalize('NFD') .replace(/[\u0300-\u036f]/g, ''); function doSearch(q) { const query = norm(q.trim()); window.__skillSearchActive = !!query; let matches = 0; items.forEach(d => { d.classList.remove('is-hidden'); if (!query) { d.removeAttribute('open'); return; } // NOTE: textContent (et pas innerText) => plus fiable const hit = norm(d.textContent).includes(query); if (hit) { matches++; d.setAttribute('open',''); } else { d.classList.add('is-hidden'); d.removeAttribute('open'); } }); if (!query) { if (clearBtn) clearBtn.style.display = 'none'; if (meta) meta.textContent = ''; } else { if (clearBtn) clearBtn.style.display = 'inline'; if (meta) meta.textContent = matches ? `${matches} catégorie(s) trouvée(s) pour « ${q} »` : `Aucun résultat pour « ${q} »`; } } if (input) input.addEventListener('input', e => doSearch(e.target.value)); if (clearBtn) clearBtn.addEventListener('click', () => { input.value=''; doSearch(''); input.focus(); }); // Debug minimal (optionnel) : // console.log('details count =', items.length); }); })(); </script>
+<script> (function () { document.addEventListener('DOMContentLoaded', function () { var input = document.getElementById('skillSearch'); var clearBtn = document.getElementById('clearSearch'); var meta = document.getElementById('searchMeta'); var acc = document.getElementById('skillsAccordion'); if (!input || !acc) return; var items = Array.prototype.slice.call(acc.querySelectorAll('details')); function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } function reset() { items.forEach(function (d) { d.classList.remove('is-hidden'); d.removeAttribute('open'); }); if (clearBtn) clearBtn.style.display = 'none'; if (meta) meta.textContent = ''; window.__skillSearchActive = false; } function search(q) { var query = norm(q.trim()); if (!query) { reset(); return; } window.__skillSearchActive = true; var matches = 0; items.forEach(function (d) { var text = norm(d.textContent || ''); if (text.indexOf(query) !== -1) { d.classList.remove('is-hidden'); d.setAttribute('open',''); matches++; } else { d.classList.add('is-hidden'); d.removeAttribute('open'); } }); if (clearBtn) clearBtn.style.display = 'inline'; if (meta) meta.textContent = (matches > 0) ? matches + ' catégorie(s) trouvée(s) pour « ' + q + ' »' : 'Aucun résultat pour « ' + q + ' »'; } input.addEventListener('input', function (e) { search(e.target.value); }); input.addEventListener('keyup', function (e) { search(e.target.value); }); if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; reset(); input.focus(); }); }); })(); </script>
