@@ -180,9 +180,17 @@ author_profile: false
 #searchMeta{margin-top:6px;color:var(--muted);font-size:13px}
 .is-hidden{display:none !important}
 
-/* Search input plus visible */
-#skillSearch{background:#eef6ff;border-color:#c6dbef}
-#skillSearch::placeholder{color:#5b87aa;opacity:1}
+#skillSearch {
+  background: #d9ebff; /* bleu plus clair */
+  border: 1px solid #a8c9f0;
+  color: #123d63;
+  font-weight: 500;
+}
+#skillSearch::placeholder {
+  color: #5b87aa;
+  opacity: 0.9;
+}
+
 
 /* Surlignage des occurrences */
 mark.hl{
@@ -193,11 +201,6 @@ border-radius:3px;
 box-shadow: inset 0 0 0 1px #f0d00080;
 
 }
-
-#skillSearch{background:#eef6ff;border-color:#c6dbef}
-#skillSearch::placeholder{color:#5b87aa;opacity:1}
-mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-shadow:inset 0 0 0 1px #f0d00080}
-
 </style>
 
 <div class="comp-wrap">
@@ -550,4 +553,132 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
-<script> (function () { document.addEventListener('DOMContentLoaded', function () { var input = document.getElementById('skillSearch'); var clearBtn = document.getElementById('clearSearch'); var meta = document.getElementById('searchMeta'); var acc = document.getElementById('skillsAccordion'); if (!input || !acc) return; var items = Array.prototype.slice.call(acc.querySelectorAll('details')); function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } function reset() { items.forEach(function (d) { d.classList.remove('is-hidden'); d.removeAttribute('open'); }); if (clearBtn) clearBtn.style.display = 'none'; if (meta) meta.textContent = ''; window.__skillSearchActive = false; } function search(q) { var query = norm(q.trim()); if (!query) { reset(); return; } window.__skillSearchActive = true; var matches = 0; items.forEach(function (d) { var text = norm(d.textContent || ''); if (text.indexOf(query) !== -1) { d.classList.remove('is-hidden'); d.setAttribute('open',''); matches++; } else { d.classList.add('is-hidden'); d.removeAttribute('open'); } }); if (clearBtn) clearBtn.style.display = 'inline'; if (meta) meta.textContent = (matches > 0) ? matches + ' catégorie(s) trouvée(s) pour « ' + q + ' »' : 'Aucun résultat pour « ' + q + ' »'; } input.addEventListener('input', function (e) { search(e.target.value); }); input.addEventListener('keyup', function (e) { search(e.target.value); }); if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; reset(); input.focus(); }); }); })(); </script>
+
+<script>
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var input = document.getElementById('skillSearch');
+    var clearBtn = document.getElementById('clearSearch');
+    var meta = document.getElementById('searchMeta');
+    var acc = document.getElementById('skillsAccordion');
+    if (!input || !acc) return;
+    var items = Array.prototype.slice.call(acc.querySelectorAll('details'));
+
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    // Fonction qui enlève les <mark>
+    function removeHighlights(el) {
+      el.querySelectorAll('mark.hl').forEach(mark => {
+        mark.replaceWith(document.createTextNode(mark.textContent));
+      });
+    }
+
+function highlight(el, query) {
+  if (!query) return;
+  removeHighlights(el);
+
+  let normQuery = norm(query);
+
+  function walk(node) {
+    if (node.nodeType === 3) { // texte pur
+      let original = node.nodeValue;
+      let normalized = norm(original);
+
+      let frag = document.createDocumentFragment();
+      let lastIndex = 0;
+      let start;
+
+      while ((start = normalized.indexOf(normQuery, lastIndex)) !== -1) {
+        let end = start + normQuery.length;
+
+        // retrouver les indices dans le texte original
+        let before = original.slice(lastIndex, start);
+        let match = original.slice(start, end);
+        let after = original.slice(end);
+
+        if (before) frag.appendChild(document.createTextNode(before));
+
+        let mark = document.createElement("mark");
+        mark.className = "hl";
+        mark.textContent = match;
+        frag.appendChild(mark);
+
+        // avancer
+        original = after;
+        normalized = norm(original);
+        lastIndex = 0; // on repart du début de la sous-chaîne
+      }
+
+      if (original) {
+        frag.appendChild(document.createTextNode(original));
+      }
+
+      if (frag.childNodes.length) {
+        node.replaceWith(frag);
+      }
+    } 
+    else if (node.nodeType === 1 && node.childNodes && !["SCRIPT","STYLE","MARK"].includes(node.tagName)) {
+      [...node.childNodes].forEach(walk);
+    }
+  }
+  walk(el);
+}
+
+
+
+
+    // Reset complet
+    function reset() {
+      items.forEach(function (d) {
+        d.classList.remove('is-hidden');
+        d.removeAttribute('open');
+        var panel = d.querySelector('.panel');
+        if (panel) removeHighlights(panel);
+      });
+      if (clearBtn) clearBtn.style.display = 'none';
+      if (meta) meta.textContent = '';
+      window.__skillSearchActive = false;
+    }
+
+    // Recherche
+    function search(q) {
+      var query = norm(q.trim());
+      if (!query) {
+        reset();
+        return;
+      }
+      window.__skillSearchActive = true;
+      var matches = 0;
+      items.forEach(function (d) {
+        var text = norm(d.textContent || '');
+        var panel = d.querySelector('.panel');
+        if (text.indexOf(query) !== -1) {
+          d.classList.remove('is-hidden');
+          d.setAttribute('open', '');
+          matches++;
+          if (panel) highlight(panel, q);
+        } else {
+          d.classList.add('is-hidden');
+          d.removeAttribute('open');
+          if (panel) removeHighlights(panel);
+        }
+      });
+      if (clearBtn) clearBtn.style.display = 'inline';
+      if (meta) meta.textContent = (matches > 0)
+        ? matches + ' catégorie(s) trouvée(s) pour « ' + q + ' »'
+        : 'Aucun résultat pour « ' + q + ' »';
+    }
+
+    // Events
+    input.addEventListener('input', e => search(e.target.value));
+    input.addEventListener('keyup', e => search(e.target.value));
+    if (clearBtn) clearBtn.addEventListener('click', function () {
+      input.value = '';
+      reset();
+      input.focus();
+    });
+  });
+})();
+</script>
