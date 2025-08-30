@@ -180,6 +180,24 @@ author_profile: false
 #searchMeta{margin-top:6px;color:var(--muted);font-size:13px}
 .is-hidden{display:none !important}
 
+/* Search input plus visible */
+#skillSearch{background:#eef6ff;border-color:#c6dbef}
+#skillSearch::placeholder{color:#5b87aa;opacity:1}
+
+/* Surlignage des occurrences */
+mark.hl{
+background:#ffeb3b66; /* jaune doux */
+color:#111;
+padding:0 .15em;
+border-radius:3px;
+box-shadow: inset 0 0 0 1px #f0d00080;
+
+}
+
+#skillSearch{background:#eef6ff;border-color:#c6dbef}
+#skillSearch::placeholder{color:#5b87aa;opacity:1}
+mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-shadow:inset 0 0 0 1px #f0d00080}
+
 </style>
 
 <div class="comp-wrap">
