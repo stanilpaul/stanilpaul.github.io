@@ -7,7 +7,6 @@ author_profile: false
 ---
 
 <style>
-/* Reprend ton style de compétences */
 :root{
   --blue:#174c7b;
   --blue-strong:#123d63;
@@ -17,13 +16,11 @@ author_profile: false
   --gap:18px;
   --font-sans: "Inter", "Segoe UI", Tahoma, sans-serif;
 }
-
 .exp-wrap{max-width:1100px;margin:40px auto;padding:0 20px;font-family:var(--font-sans);color:#222;line-height:1.65}
 .exp-header{margin-bottom:28px}
 .exp-header h1{font-size:34px;letter-spacing:.02em;margin:0 0 6px;color:var(--blue-strong)}
 .exp-header p{margin:0;color:var(--muted);font-size:15px}
 
-/* Accordéon identique */
 .experiences-accordion{display:grid;gap:var(--gap);margin-top:18px}
 .experiences-accordion details{border-radius:var(--radius);overflow:hidden;background:transparent}
 .experiences-accordion details summary{
@@ -45,14 +42,12 @@ author_profile: false
   background:var(--panel);border:1px solid rgba(0,0,0,0.06);border-top:none;
   padding:0 22px;border-radius:0 0 var(--radius) var(--radius);
   box-shadow:0 8px 26px rgba(10,20,30,0.05);
-  color:var(--muted);overflow:hidden;max-height:0;opacity:0;
+  color:#333;overflow:hidden;max-height:0;opacity:0;
   transition:max-height 1s cubic-bezier(.2,.9,.2,1),opacity .95s ease
 }
-.experiences-accordion details[open] .panel{
-  padding:18px 22px 22px;max-height:1400px;opacity:1
-}
+.experiences-accordion details[open] .panel{padding:18px 22px 22px;max-height:1400px;opacity:1}
 .panel h3{margin:0 0 8px;color:#12263b;font-size:15px;font-weight:700}
-.panel p,.panel li{margin:6px 0;color:#333;font-size:14px}
+.panel p,.panel li{margin:6px 0;font-size:14px}
 .panel ul{margin:6px 0 0 18px;padding:0}
 .panel li{margin-bottom:8px}
 
@@ -88,7 +83,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Projets Cloud & DevOps -->
     <details>
       <summary>
-        <span>Projets Cloud & DevOps | Perso - Autonomie | Décembre 2024 - En cours</span>
+        <span>🚀 Projets Cloud & DevOps | Perso - Autonomie | Décembre 2024 - En cours</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -108,7 +103,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Ministère Justice -->
     <details>
       <summary>
-        <span>Technicien Informatique de Proximité | Ministère de la Justice | Décembre 2023 - Juillet 2024</span>
+        <span>💼 Technicien Informatique de Proximité | Ministère de la Justice | Décembre 2023 - Juillet 2024</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -116,7 +111,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
         <strong>Période :</strong> Décembre 2023 – Juillet 2024<br>
         <strong>Poste :</strong>Technicien Informatique de Proximité</p>
         <ul>
-          <li>Gestion des incidents et demandes (N1/N2) via GLPI selon les normes ITIL</li>
+          <li>Gestion des incidents et demandes (N1/N2) via GLPI selon les normes ITIL.</li>
           <li>Support utilisateurs VIP sur site et à distance (RDP, TeamViewer, AnyDesk).</li>
           <li>Administration des identités : Active Directory, gestion des accès, groupes, MFA.</li>
           <li>Installation, masterisation, maintenance des postes Windows 10/11, imprimantes.</li>
@@ -132,7 +127,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- BNP -->
     <details>
       <summary>
-        <span>Technicien Support (Akkodis) | BNP Paribas | Septembre 2023 - Septembre 2023</span>
+        <span>💼 Technicien Support (Akkodis) | BNP Paribas | Septembre 2023 - Septembre 2023</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -148,11 +143,10 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
       </div>
     </details>
 
-
     <!-- Cojean -->
     <details>
       <summary>
-        <span>Employé polyvalent et gestion de stock | Labo de Cojean | Avril 2022 - Juin 2023</span>
+        <span>💼 Employé polyvalent et gestion de stock | Labo de Cojean | Avril 2022 - Juin 2023</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -166,11 +160,10 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
       </div>
     </details>
 
-
-    <!-- Apprenticeship -->
+    <!-- Alternance -->
     <details>
       <summary>
-        <span>IT Technician & Full Stack Developer en Alternance | CFM France | Septembre 2020 - Octobre 2021</span>
+        <span>💻 IT Technician & Full Stack Developer en Alternance | CFM France | Septembre 2020 - Octobre 2021</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -192,21 +185,10 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const detailsList = [...document.querySelectorAll(".experiences-accordion details")];
-  detailsList.forEach(d => d.removeAttribute("open"));
-  detailsList.forEach(d => {
-    d.addEventListener("toggle", () => {
-      if (d.open && !window.__expSearchActive) {
-        detailsList.forEach(o => { if (o !== d) o.removeAttribute("open"); });
-      }
-    });
-  });
-
+  const acc = document.getElementById("experiencesAccordion");
   const input = document.getElementById("expSearch");
   const clearBtn = document.getElementById("clearExpSearch");
   const meta = document.getElementById("expMeta");
-  const acc = document.getElementById("experiencesAccordion");
-  if (!input || !acc) return;
   const items = [...acc.querySelectorAll("details")];
 
   function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
@@ -218,16 +200,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const nq=norm(query);
     function walk(n){
       if(n.nodeType===3){
-        let o=n.nodeValue, frag=document.createDocumentFragment();
-        let regex=new RegExp("("+query+")","gi");
-        let parts=o.split(regex);
-        parts.forEach(p=>{
-          if(norm(p)===nq){
-            let mark=document.createElement("mark");
-            mark.className="hl";mark.textContent=p;frag.appendChild(mark);
-          }else frag.appendChild(document.createTextNode(p));
-        });
-        n.replaceWith(frag);
+        let text=n.nodeValue;
+        let normText=norm(text);
+        let idx=normText.indexOf(nq);
+        if(idx!==-1){
+          const frag=document.createDocumentFragment();
+          let last=0;
+          while(idx!==-1){
+            frag.appendChild(document.createTextNode(text.slice(last,idx)));
+            const mark=document.createElement("mark");
+            mark.className="hl";
+            mark.textContent=text.slice(idx,idx+query.length);
+            frag.appendChild(mark);
+            last=idx+query.length;
+            idx=norm(text.slice(last)).indexOf(nq);
+            if(idx!==-1) idx+=last;
+          }
+          frag.appendChild(document.createTextNode(text.slice(last)));
+          n.replaceWith(frag);
+        }
       } else if(n.nodeType===1 && n.childNodes && !["SCRIPT","STYLE","MARK"].includes(n.tagName)){
         [...n.childNodes].forEach(walk);
       }
@@ -236,12 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function reset(){
-    items.forEach(d=>{
-      d.classList.remove("is-hidden");d.removeAttribute("open");
-      removeHighlights(d);
-    });
-    if(clearBtn) clearBtn.style.display="none";
-    if(meta) meta.textContent="";
+    items.forEach(d=>{d.classList.remove("is-hidden");d.removeAttribute("open");removeHighlights(d);});
+    clearBtn.style.display="none";meta.textContent="";
     window.__expSearchActive=false;
   }
 
@@ -257,11 +244,11 @@ document.addEventListener("DOMContentLoaded", () => {
         highlight(d,q);matches++;
       } else {d.classList.add("is-hidden");d.removeAttribute("open");removeHighlights(d);}
     });
-    if(clearBtn) clearBtn.style.display="inline";
-    if(meta) meta.textContent=(matches>0)?matches+" expérience(s) trouvée(s) pour « "+q+" »":"Aucun résultat pour « "+q+" »";
+    clearBtn.style.display="inline";
+    meta.textContent=(matches>0)?matches+" expérience(s) trouvée(s) pour « "+q+" »":"Aucun résultat pour « "+q+" »";
   }
 
   input.addEventListener("input",e=>search(e.target.value));
-  if(clearBtn) clearBtn.addEventListener("click",()=>{input.value="";reset();input.focus();});
+  clearBtn.addEventListener("click",()=>{input.value="";reset();input.focus();});
 });
 </script>
