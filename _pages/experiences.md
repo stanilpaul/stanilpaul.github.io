@@ -83,7 +83,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Projets Cloud & DevOps -->
     <details>
       <summary>
-        <span>🚀 Projets Cloud & DevOps | Perso - Autonomie | Décembre 2024 - En cours</span>
+        <span>Projets Cloud & DevOps | Perso - Autonomie | Décembre 2024 - En cours</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -103,7 +103,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Ministère Justice -->
     <details>
       <summary>
-        <span>💼 Technicien Informatique de Proximité | Ministère de la Justice | Décembre 2023 - Juillet 2024</span>
+        <span>Technicien Informatique de Proximité | Ministère de la Justice | Décembre 2023 - Juillet 2024</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -127,7 +127,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- BNP -->
     <details>
       <summary>
-        <span>💼 Technicien Support (Akkodis) | BNP Paribas | Septembre 2023 - Septembre 2023</span>
+        <span>Technicien Support (Akkodis) | BNP Paribas | Septembre 2023 - Septembre 2023</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -146,7 +146,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Cojean -->
     <details>
       <summary>
-        <span>💼 Employé polyvalent et gestion de stock | Labo de Cojean | Avril 2022 - Juin 2023</span>
+        <span>Employé polyvalent et gestion de stock | Labo de Cojean | Avril 2022 - Juin 2023</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -163,7 +163,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Alternance -->
     <details>
       <summary>
-        <span>💻 IT Technician & Full Stack Developer en Alternance | CFM France | Septembre 2020 - Octobre 2021</span>
+        <span>IT Technician & Full Stack Developer en Alternance | CFM France | Septembre 2020 - Octobre 2021</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">

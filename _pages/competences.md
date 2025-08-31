@@ -239,7 +239,7 @@ mark.hl{
         <div class="section">
           <h3>IaC & Automatisation</h3>
           <ul>
-            <li>Bicep / ARM Templates, Terraform (intégration Azure), Azure CLI, azd, PowerShell.</li>
+            <li>Bicep / ARM Templates, Terraform (intégration Azure), Azure CLI, PowerShell.</li>
             <li>Gestion du state (Azure Storage backend), modules réutilisables, pipelines IaC.</li>
           </ul>
         </div>
@@ -304,7 +304,7 @@ mark.hl{
           <ul>
             <li>Terraform : modules, workspaces, backends Azure Storage, stratégies de verrouillage et sécurité du state.</li>
             <li>Bicep / ARM Templates : déploiements natifs Azure et intégration CI.</li>
-            <li>Azure CLI, azd, PowerShell : automatisation et scripts de déploiement.</li>
+            <li>Azure CLI, PowerShell : automatisation et scripts de déploiement.</li>
           </ul>
         </div>
       </div>
