@@ -3,7 +3,7 @@ title: "Compétences"
 permalink: /competences/
 layout: single
 classes: wide
-author_profile: false
+author_profile: true
 ---
 
 <style>

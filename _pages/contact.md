@@ -4,8 +4,11 @@ permalink: /contact/
 layout: single
 ---
 
-Le plus simple: contacte‑moi sur LinkedIn.  
-[Mon profil LinkedIn](https://www.linkedin.com/in/paul-stanil-grasian-9a9989187/){: .btn .btn--primary target="_blank" rel="noopener" }
+<p style="font-size:0.8rem;">
 
-Ou vois mes dépôts:
-[Mon GitHub](https://github.com/stanilpaul){: .btn }
+📬 Vous êtes intéressé par mon profil ?  
+Merci de privilégier <a href="https://www.linkedin.com/in/paul-stanil-grasian-9a9989187/" target="_blank" rel="noopener">LinkedIn</a>  
+ou d’utiliser l’adresse mail suivante :  
+👉 paulstanilg [at] gmail [point] com  
+
+</p>

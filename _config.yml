@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Paul Stanil Grasian - Ingénieur Cloud Azure"
+title: "Paul Stanil"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Portfolio Cloud: Azure, DevOps, Terraform, SRE. AZ-104 certifié.
@@ -63,7 +63,7 @@ plugins:
 author:
   name   : "Paul Stanil Grasian"
   avatar : "/assets/images/profile.png"
-  bio    : "Ingénieur Cloud Azure (AZ‑104). DevOps, IaC (Terraform), CI/CD, SRE. Pratique quotidienne depuis déc. 2024."
+  bio    : "Ingénieur Cloud Azure certifié (AZ-104), passionné par l’automatisation et la fiabilité des systèmes. J’accompagne les équipes à déployer des environnements Cloud performants, avec des pratiques DevOps, IaC (Terraform) et CI/CD."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

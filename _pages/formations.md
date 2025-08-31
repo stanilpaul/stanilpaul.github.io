@@ -3,7 +3,7 @@ title: "Formations & Certifications"
 permalink: /formations/
 layout: single
 classes: wide
-author_profile: false
+author_profile: true
 ---
 
 <style>

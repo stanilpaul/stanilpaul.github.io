@@ -1,11 +1,11 @@
 main:
-  - title: "Accueil"
-    url: /
-  - title: "Projects"
+  # - title: "Accueil"
+  #   url: /
+  - title: "Projets"
     url: /projects/
   - title: "Compétences"
     url: /competences/
-  - title: "Expériances"
+  - title: "Expériences"
     url: /experiences/
   - title: "Formations"
     url: /formations/

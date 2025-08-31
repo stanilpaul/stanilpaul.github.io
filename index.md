@@ -1,16 +1,35 @@
 ---
 layout: splash
 title: "Ingénieur Cloud Azure"
-excerpt: "IaC (Terraform) • DevOps • CI/CD • SRE — AZ-104 certifié"
+excerpt: "Azure • Terraform • CI/CD • SRE — Certifié AZ-104"
 header:
-  overlay_image: /assets/images/hero.jpg    # ajoute une image si tu veux
+  overlay_image: /assets/images/hero.jpg   # image de fond (optionnelle)
   overlay_filter: 0.3
   actions:
     - label: "Voir mes projets"
-      url: "/projects/"
+      url: "/Projects/"
       class: "btn btn--primary"
+    - label: "Mon CV"
+      url: "/assets/docs/CV-Paul.pdf"   # mets le chemin de ton CV si tu veux
+      class: "btn"
+    - label: "Me contacter"
+      url: "/contact/"   # mets le chemin de ton CV si tu veux
+      class: "btn"
 ---
 
-Bienvenue sur mon portfolio. J’aide les équipes à concevoir, déployer et fiabiliser des plateformes Cloud (Azure) avec des pratiques DevOps et Infrastructure as Code (Terraform). Je documente et publie mes projets (code + diagrammes + démos).
+<p style="font-size:16px; line-height:1.5;">
+👋 Bienvenue ! <br><br>
+Certifié Microsoft Azure (AZ-104), passionné de Cloud & DevOps,  
+j’aide les équipes à concevoir, déployer et fiabiliser des environnements Cloud avec des pratiques 
+Infrastructure as Code (Terraform) et CI/CD.  
+</p>
+
+<hr>
+
+<p style="font-size:15px; line-height:1.5;">
+Mon objectif : Apporter des solutions Cloud performantes, automatisées et documentées dès le premier jour.  
+Découvrez mes projets, mes démos et mes expériences concrètes dans ce portfolio.
+</p>
+
 
 {% include feature_row id="projects_highlight" %}
