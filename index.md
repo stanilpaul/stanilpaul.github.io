@@ -7,7 +7,7 @@ header:
   overlay_filter: 0.3
   actions:
     - label: "Voir mes projets"
-      url: "/Projects/"
+      url: "/projects/"
       class: "btn btn--primary"
     - label: "Mon CV"
       url: "/assets/docs/CV-Paul.pdf"   # mets le chemin de ton CV si tu veux
