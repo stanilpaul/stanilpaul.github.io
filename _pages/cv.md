@@ -4,17 +4,17 @@ permalink: /cv/
 layout: single
 ---
 
-<div style="margin-bottom: 20px;">
+<div style="margin-bottom: 20px;font-size:0.7rem;">
   <a href="{{ '/assets/cv/cv-paul-stanil-grasian.pdf' | relative_url }}" 
-     class="cv-btn">
+     class="cv-btn" target="_blank">
     Télécharger le CV (PDF)
-  </a>
+  </a><br>
   <a href="https://learn.microsoft.com/api/credentials/share/fr-fr/PaulPaul-2197/637D25067696EBC3?sharingId=D25051DD12D1109C" 
-     class="cv-btn">
+     class="cv-btn" target="_blank">
     Télécharger la certification Azure (PDF)
-  </a>
+  </a><br>
   <a href="{{ '/assets/pdf/Mes_compétences_Azure_cloud.pdf' | relative_url }}" 
-     class="cv-btn">
+     class="cv-btn" target="_blank">
     Télécharger mes compétences Azure (PDF)
   </a>
 </div>
