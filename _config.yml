@@ -62,7 +62,7 @@ plugins:
 
 author:
   name   : "Paul Stanil Grasian"
-  avatar : "/assets/images/profile.jpg"
+  avatar : "/assets/images/profile.png"
   bio    : "Ingénieur Cloud Azure (AZ‑104). DevOps, IaC (Terraform), CI/CD, SRE. Pratique quotidienne depuis déc. 2024."
   links:
     - label: "Website"
