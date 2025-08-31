@@ -94,13 +94,11 @@ author_profile: false
   transition: transform 0.35s ease;
   opacity: 0.95;
 }
-
-/* Rotate when parent details open */
 .skills-accordion details[open] summary .summary-arrow {
   transform: rotate(180deg);
 }
 
-/* Panel - animated open/close */
+/* Panel */
 .skills-accordion details .panel {
   background: var(--panel);
   border: 1px solid rgba(0,0,0,0.06);
@@ -114,49 +112,36 @@ author_profile: false
   opacity: 0;
   transition: max-height 1s cubic-bezier(.2,.9,.2,1), opacity 0.95s ease;
 }
-
-/* When open - allow content to show with a slide + fade */
 .skills-accordion details[open] .panel {
   padding: 18px 22px 22px 22px;
-  max-height: 1400px; /* suffisamment grand */
+  max-height: 1400px;
   opacity: 1;
 }
 
 /* Inner layout */
 .panel .section {
-  transform: translateY(6px);
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 14px;
 }
 .panel h3 {
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   color: #12263b;
   font-size: 15px;
   font-weight: 700;
 }
-.panel p, .panel .line {
-  margin: 6px 0;
-  color: #333;
-  font-size: 14px;
-}
 .panel ul {
-  margin: 6px 0 0 18px;
+  margin: 0 0 6px 18px;
   padding: 0;
 }
 .panel li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 14px;
   color: #333;
 }
 
-/* subtle highlight on open */
+/* subtle highlight */
 .skills-accordion details[open] summary {
   box-shadow: 0 6px 18px rgba(10,20,30,0.06);
 }
-
-/* small transition for list items appearance */
-.panel .section { transform: translateY(0); transition: transform 0.28s ease; }
-.skills-accordion details[open] .panel .section { transform: translateY(0); }
 
 /* Responsive */
 @media (max-width: 800px){
@@ -165,41 +150,23 @@ author_profile: false
   .panel { padding: 16px; }
 }
 
-/* Accessibility focus */
-.skills-accordion details summary:focus {
-  box-shadow: 0 0 0 3px rgba(23,76,123,0.14);
-  outline: none;
-}
-
-/* Search bar à droite du sous-titre */
+/* Search bar */
 .comp-header-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .searchbar{position:relative;min-width:280px}
-#skillSearch{appearance:none;width:320px;max-width:100%;padding:10px 36px 10px 12px;border:1px solid rgba(0,0,0,.15);border-radius:8px;font-size:14px}
+#skillSearch{appearance:none;width:320px;max-width:100%;padding:10px 36px 10px 12px;border:1px solid rgba(0,0,0,.15);border-radius:8px;font-size:14px;background:#d9ebff;border:1px solid #a8c9f0;color:#123d63;font-weight:500}
+#skillSearch::placeholder{color:#5b87aa;opacity:0.9}
 #skillSearch:focus{outline:none;box-shadow:0 0 0 3px rgba(23,76,123,.15);border-color:var(--blue)}
 #clearSearch{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;font-size:16px;color:#999;cursor:pointer;display:none}
 #searchMeta{margin-top:6px;color:var(--muted);font-size:13px}
 .is-hidden{display:none !important}
 
-#skillSearch {
-  background: #d9ebff; /* bleu plus clair */
-  border: 1px solid #a8c9f0;
-  color: #123d63;
-  font-weight: 500;
-}
-#skillSearch::placeholder {
-  color: #5b87aa;
-  opacity: 0.9;
-}
-
-
-/* Surlignage des occurrences */
+/* Highlight */
 mark.hl{
-background:#ffeb3b66; /* jaune doux */
-color:#111;
-padding:0 .15em;
-border-radius:3px;
-box-shadow: inset 0 0 0 1px #f0d00080;
-
+  background:#ffeb3b66;
+  color:#111;
+  padding:0 .15em;
+  border-radius:3px;
+  box-shadow: inset 0 0 0 1px #f0d00080;
 }
 </style>
 
@@ -497,164 +464,75 @@ box-shadow: inset 0 0 0 1px #f0d00080;
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const detailsList = Array.from(document.querySelectorAll('.skills-accordion details'));
-
-  // Ensure all closed on load
-  detailsList.forEach(d => d.removeAttribute('open'));
-
-  // Exclusive accordion: when one opens, close others
-  detailsList.forEach(d => {
-    d.addEventListener('toggle', function() {
-      if (d.open && !window.__skillSearchActive) {
-        detailsList.forEach(other => {
-          if (other !== d) other.removeAttribute('open');
-        });
-        // accessibility focus
-        const panel = d.querySelector('.panel');
-        if (panel) {
-          panel.setAttribute('tabindex', '-1');
-          panel.focus({preventScroll: true});
-        }
-      }
-    });
-  });
-
-  // Staggered reveal with ~1s transitions
-  detailsList.forEach(d => {
-    d.addEventListener('toggle', function() {
-      const sections = Array.from(d.querySelectorAll('.panel .section'));
-      if (d.open) {
-        // reset then animate with stagger
-        sections.forEach((s) => {
-          s.style.opacity = 0;
-          s.style.transform = 'translateY(8px)';
-          // ensure transition properties are applied (matching CSS)
-          s.style.transition = 'opacity 1000ms ease, transform 1000ms ease';
-        });
-        sections.forEach((s, i) => {
-          // stagger: 120ms * index (keeps total pleasant)
-          setTimeout(() => {
-            s.style.opacity = 1;
-            s.style.transform = 'translateY(0)';
-          }, 120 * i);
-        });
-      } else {
-        // close: remove inline styles to reset to CSS defaults
-        sections.forEach((s) => {
-          s.style.opacity = '';
-          s.style.transform = '';
-          s.style.transition = '';
-        });
-      }
-    });
-  });
-});
-
-
-</script>
-
-<script>
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    var input = document.getElementById('skillSearch');
-    var clearBtn = document.getElementById('clearSearch');
-    var meta = document.getElementById('searchMeta');
-    var acc = document.getElementById('skillsAccordion');
+    const input = document.getElementById('skillSearch');
+    const clearBtn = document.getElementById('clearSearch');
+    const meta = document.getElementById('searchMeta');
+    const acc = document.getElementById('skillsAccordion');
     if (!input || !acc) return;
-    var items = Array.prototype.slice.call(acc.querySelectorAll('details'));
+    const items = Array.from(acc.querySelectorAll('details'));
 
-    function norm(s) {
-      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
+    const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-    // Fonction qui enlève les <mark>
     function removeHighlights(el) {
-      el.querySelectorAll('mark.hl').forEach(mark => {
-        mark.replaceWith(document.createTextNode(mark.textContent));
-      });
+      el.querySelectorAll('mark.hl').forEach(mark => mark.replaceWith(document.createTextNode(mark.textContent)));
     }
 
-function highlight(el, query) {
-  if (!query) return;
-  removeHighlights(el);
+    function highlight(el, query) {
+      if (!query) return;
+      removeHighlights(el);
+      const normQuery = norm(query);
 
-  let normQuery = norm(query);
+      function walk(node) {
+        if (node.nodeType === 3) {
+          let original = node.nodeValue;
+          let normalized = norm(original);
+          let frag = document.createDocumentFragment();
+          let lastIndex = 0, start;
 
-  function walk(node) {
-    if (node.nodeType === 3) { // texte pur
-      let original = node.nodeValue;
-      let normalized = norm(original);
+          while ((start = normalized.indexOf(normQuery, lastIndex)) !== -1) {
+            let end = start + normQuery.length;
+            frag.appendChild(document.createTextNode(original.slice(lastIndex, start)));
 
-      let frag = document.createDocumentFragment();
-      let lastIndex = 0;
-      let start;
+            let mark = document.createElement("mark");
+            mark.className = "hl";
+            mark.textContent = original.slice(start, end);
+            frag.appendChild(mark);
 
-      while ((start = normalized.indexOf(normQuery, lastIndex)) !== -1) {
-        let end = start + normQuery.length;
-
-        // retrouver les indices dans le texte original
-        let before = original.slice(lastIndex, start);
-        let match = original.slice(start, end);
-        let after = original.slice(end);
-
-        if (before) frag.appendChild(document.createTextNode(before));
-
-        let mark = document.createElement("mark");
-        mark.className = "hl";
-        mark.textContent = match;
-        frag.appendChild(mark);
-
-        // avancer
-        original = after;
-        normalized = norm(original);
-        lastIndex = 0; // on repart du début de la sous-chaîne
+            lastIndex = end;
+          }
+          frag.appendChild(document.createTextNode(original.slice(lastIndex)));
+          if (frag.childNodes.length) node.replaceWith(frag);
+        } else if (node.nodeType === 1 && node.childNodes && !["SCRIPT","STYLE","MARK"].includes(node.tagName)) {
+          [...node.childNodes].forEach(walk);
+        }
       }
-
-      if (original) {
-        frag.appendChild(document.createTextNode(original));
-      }
-
-      if (frag.childNodes.length) {
-        node.replaceWith(frag);
-      }
-    } 
-    else if (node.nodeType === 1 && node.childNodes && !["SCRIPT","STYLE","MARK"].includes(node.tagName)) {
-      [...node.childNodes].forEach(walk);
+      walk(el);
     }
-  }
-  walk(el);
-}
 
-
-
-
-    // Reset complet
     function reset() {
-      items.forEach(function (d) {
+      items.forEach(d => {
         d.classList.remove('is-hidden');
         d.removeAttribute('open');
-        var panel = d.querySelector('.panel');
+        const panel = d.querySelector('.panel');
         if (panel) removeHighlights(panel);
       });
-      if (clearBtn) clearBtn.style.display = 'none';
-      if (meta) meta.textContent = '';
+      clearBtn.style.display = 'none';
+      meta.textContent = '';
       window.__skillSearchActive = false;
     }
 
-    // Recherche
     function search(q) {
-      var query = norm(q.trim());
-      if (!query) {
-        reset();
-        return;
-      }
+      const query = norm(q.trim());
+      if (!query) return reset();
+
       window.__skillSearchActive = true;
-      var matches = 0;
-      items.forEach(function (d) {
-        var text = norm(d.textContent || '');
-        var panel = d.querySelector('.panel');
-        if (text.indexOf(query) !== -1) {
+      let matches = 0;
+      items.forEach(d => {
+        const text = norm(d.textContent || '');
+        const panel = d.querySelector('.panel');
+        if (text.includes(query)) {
           d.classList.remove('is-hidden');
           d.setAttribute('open', '');
           matches++;
@@ -665,20 +543,14 @@ function highlight(el, query) {
           if (panel) removeHighlights(panel);
         }
       });
-      if (clearBtn) clearBtn.style.display = 'inline';
-      if (meta) meta.textContent = (matches > 0)
+      clearBtn.style.display = 'inline';
+      meta.textContent = matches > 0
         ? matches + ' catégorie(s) trouvée(s) pour « ' + q + ' »'
         : 'Aucun résultat pour « ' + q + ' »';
     }
 
-    // Events
     input.addEventListener('input', e => search(e.target.value));
-    input.addEventListener('keyup', e => search(e.target.value));
-    if (clearBtn) clearBtn.addEventListener('click', function () {
-      input.value = '';
-      reset();
-      input.focus();
-    });
+    clearBtn.addEventListener('click', () => { input.value = ''; reset(); input.focus(); });
   });
 })();
 </script>
