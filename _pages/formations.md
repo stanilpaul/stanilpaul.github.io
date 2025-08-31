@@ -82,7 +82,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Autoformation -->
     <details>
       <summary>
-        <span>🌍 Autoformation continue — Cloud & DevOps | Mai 2025 – En cours</span>
+        <span>Autoformation continue — Cloud & DevOps | Mai 2025 – En cours</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -99,7 +99,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Formation privée -->
     <details>
       <summary>
-        <span>🎓 Formation privée — DevOps & Cloud (Huzefai, Inde) | Fév. 2025 – Août 2025</span>
+        <span>Formation privée — DevOps & Cloud (Huzefai, Inde) | Fév. 2025 – Août 2025</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -117,7 +117,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- Certification -->
     <details>
       <summary>
-        <span>🏅 Certification Microsoft Azure Administrator (AZ-104) | Fév. 2025</span>
+        <span>Certification Microsoft Azure Administrator (AZ-104) | Fév. 2025</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -131,8 +131,8 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
           <li>DevOps & automatisation : PowerShell, Azure CLI, ARM, IaC.</li>
         </ul>
         <p>
-          🔗 <a href="URL_CERTIFICATION" target="_blank">Certification officielle AZ-104</a><br>
-          🔗 <a href="URL_PDF" target="_blank">Télécharger le sommaire détaillé (PDF)</a>
+          🔗 <a href="https://learn.microsoft.com/api/credentials/share/fr-fr/PaulPaul-2197/637D25067696EBC3?sharingId=D25051DD12D1109C" target="_blank">Certification officielle AZ-104</a><br>
+          🔗 <a href="/assets/pdf/Mes_compétences_Azure_cloud.pdf" target="_blank">Télécharger le sommaire détaillé (PDF)</a>
         </p>
       </div>
     </details>
@@ -140,7 +140,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- IUT -->
     <details>
       <summary>
-        <span>🎓 Licence Professionnelle Informatique — IUT de Bobigny | 2020 – 2021</span>
+        <span>Licence Professionnelle Informatique — IUT de Bobigny | 2020 – 2021</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
@@ -155,7 +155,7 @@ mark.hl{background:#ffeb3b66;color:#111;padding:0 .15em;border-radius:3px;box-sh
     <!-- BTS -->
     <details>
       <summary>
-        <span>🎓 BTS SIO SLAM — Lycée Louise Michel, Bobigny | 2018 – 2020</span>
+        <span>BTS SIO SLAM — Lycée Louise Michel, Bobigny | 2018 – 2020</span>
         <span class="summary-arrow">▾</span>
       </summary>
       <div class="panel">
