@@ -177,6 +177,24 @@ mark.hl{
     
   </div>
 
+      <div class="skills-accordion" id="skillsAccordion">
+      <!-- Langue -->
+      <details data-key="certs">
+        <summary>
+          <span>Langue</span>
+          <span class="summary-arrow">▾</span>
+        </summary>
+        <div class="panel">
+          <div class="section">
+            <ul>
+              <li><strong>Français</strong> — Courant (C2).</li>
+              <li><strong>Anglais</strong> — Niveau avancé (C1).</li>
+              <li><strong>Tamoul</strong> — Courant (C2).</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
     <div class="skills-accordion" id="skillsAccordion">
       <!-- Certifications -->
       <details data-key="certs">
