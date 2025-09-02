@@ -194,8 +194,6 @@ mark.hl{
           </div>
         </div>
       </details>
-
-    <div class="skills-accordion" id="skillsAccordion">
       <!-- Certifications -->
       <details data-key="certs">
         <summary>
