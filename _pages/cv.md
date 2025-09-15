@@ -1,6 +1,6 @@
 ---
 title: "Mon CV"
-permalink: /cv/
+permalink: /pdf/
 layout: single
 ---
 

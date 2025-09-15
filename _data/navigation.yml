@@ -9,7 +9,7 @@ main:
     url: /experiences/
   - title: "Formations"
     url: /formations/
-  - title: "CV"
-    url: /cv/
+  - title: "PDF"
+    url: /pdf/
   - title: "Contact"
     url: /contact/    

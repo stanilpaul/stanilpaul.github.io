@@ -10,7 +10,7 @@ header:
       url: "/projects/"
       class: "btn btn--primary"
     - label: "Mon CV"
-      url: "/cv/"   # mets le chemin de ton CV si tu veux
+      url: "/pdf/"   # mets le chemin de ton CV si tu veux
       class: "btn"
     - label: "Me contacter"
       url: "/contact/"   # mets le chemin de ton CV si tu veux
