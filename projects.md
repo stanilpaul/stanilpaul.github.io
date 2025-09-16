@@ -1,10 +1,13 @@
 ---
-title: "Projets"
+title: ""
 permalink: /projects/
-layout: collection
+layout: projects-modern  # <-- On va créer ce layout
 collection: projects
 entries_layout: grid
-classes: wide
 sort_by: completion_date
 sort_order: reverse
+classes: wide
+header:
+  overlay_image: /assets/images/projects-hero.jpg
+  caption: ""
 ---

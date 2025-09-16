@@ -1,0 +1,154 @@
+---
+layout: default
+---
+
+{% include breadcrumbs.html %}
+
+<header class="page__hero" {% if page.header.overlay_color or page.header.overlay_image %}style="background-color: {{ page.header.overlay_color | default: 'transparent' }}; background-image: {% if page.header.overlay_image %}url('{{ page.header.overlay_image | relative_url }}'){% endif %};"{% endif %}>
+  <div class="wrapper">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% if page.header.caption %}<p class="page__lead">{{ page.header.caption }}</p>{% endif %}
+  </div>
+</header>
+
+<div class="grid-wrapper projects-grid">
+  {% assign sorted_projects = site.projects | sort: 'completion_date' | reverse %}
+  {% for post in sorted_projects %}
+    <article class="project-card">
+      <a href="{{ post.url | relative_url }}" class="project-link">
+        <div class="project-card__image">
+          {% if post.header.teaser %}
+            <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+          {% else %}
+            <div class="project-card__placeholder">📹</div>
+          {% endif %}
+        </div>
+        <div class="project-card__body">
+          <h3 class="project-card__title">{{ post.title }}</h3>
+          <p class="project-card__excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 120 }}</p>
+          
+          <div class="project-meta">
+            <span class="project-date">📅 {{ post.completion_date | date: "%d %b %Y" }}</span>
+            {% if post.effort_hours %}
+              <span class="project-duration">⏱️ {{ post.effort_hours }}h</span>
+            {% endif %}
+          </div>
+
+          <div class="project-tags">
+            {% for tag in post.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card__image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+
+  .project-card__placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ccc;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+  }
+
+  .project-card__body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card__title {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #2c3e50;
+  }
+
+  .project-card__excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0 0 1rem 0;
+    flex: 1;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .tag {
+    background: #eef2ff;
+    color: #4361ee;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+  }
+</style>
