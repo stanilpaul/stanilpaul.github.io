@@ -12,7 +12,7 @@ completion_date: 2025-09-16
 ---
 
 <video autoplay muted loop playsinline preload="metadata" width="100%">
-  <source src="{{ '/assets/videos/vpn.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/videos/vpn-final.mp4' | relative_url }}" type="video/mp4">
 </video>
 
 > 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
