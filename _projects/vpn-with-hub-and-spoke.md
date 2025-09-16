@@ -18,7 +18,7 @@ completion_date: 2025-09-16
 > 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
 
 ## Objectif du projet
-
+ 
 > *Simuler une infrastructure d’entreprise réelle en combinant les meilleures pratiques Azure Networking :*
 > - Connecter un environnement **“On-Premises” simulé** à Azure via **Site-to-Site VPN**
 > - Permettre aux utilisateurs distants de se connecter via **Point-to-Site VPN**
