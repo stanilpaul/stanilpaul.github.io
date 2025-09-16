@@ -23,6 +23,7 @@ classes: wide
 read_time: true
 author_profile: true
 breadcrumbs: true
+completion_date: 2025-07-20
 ---
 
 ## Introduction
@@ -30,6 +31,8 @@ breadcrumbs: true
 <video autoplay muted loop playsinline preload="metadata" width="100%">
   <source src="{{ '/assets/videos/azuredevopspipelinegithubrepo.mp4' | relative_url }}" type="video/mp4">
 </video>
+
+> 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
 
 ### Contexte
 

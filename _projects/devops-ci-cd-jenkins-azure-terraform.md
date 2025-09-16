@@ -8,6 +8,7 @@ tags: [Azure, Terraform, Jenkins, Docker, CI/CD, DevOps, IaC, Linux, SRE]
 toc: true
 toc_sticky: true
 classes: wide
+completion_date: 2025-06-10
 ---
 
 ## Introduction
@@ -15,6 +16,8 @@ classes: wide
 <video autoplay muted loop playsinline preload="metadata" width="100%">
   <source src="{{ '/assets/videos/devopsproject1.mp4' | relative_url }}" type="video/mp4">
 </video>
+
+> 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
 
 ### Contexte
 

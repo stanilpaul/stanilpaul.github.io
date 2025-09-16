@@ -8,6 +8,7 @@ tags: [Azure, GitHub Actions, CI/CD, DevOps, PHP, Laravel, MySQL, Redis, Cloud, 
 toc: true
 toc_sticky: true
 classes: wide
+completion_date: 2025-08-16
 ---
 
 
@@ -16,6 +17,8 @@ classes: wide
 <video autoplay muted loop playsinline preload="metadata" width="100%">
   <source src="{{ '/assets/videos/azureappserviceproject1.mp4' | relative_url }}" type="video/mp4">
 </video>
+
+> 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
 
 ### Contexte
 
