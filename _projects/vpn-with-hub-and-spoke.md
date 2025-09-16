@@ -62,8 +62,8 @@ Ce projet a été réalisé dans un but d’apprentissage approfondi des archite
 |---------------------|--------------------|-----------------|-----------------------------|
 | **On-Prem Simulé**  | `OnPremRG`         | `172.0.0.0/16`  | `workload-subnet (172.0.0.0/24)`, `GatewaySubnet (172.0.1.0/27)` |
 | **Azure Hub**       | `AzureRG`          | `10.100.0.0/16` | `workload-subnet (10.100.0.0/24)`, `GatewaySubnet (10.100.1.0/27)` |
-| **Spoke 1**         | `AzureRG`          | `10.200.0.0/24` | `workload-subnet (10.200.0.0/24)` |
-| **Spoke 2**         | `AzureRG`          | `10.222.0.0/24` | `workload-subnet (10.222.0.0/27)` |
+| **Spoke 1**         | `AzureRG`          | `10.200.0.0/16` | `workload-subnet (10.200.0.0/24)` |
+| **Spoke 2**         | `AzureRG`          | `10.222.0.0/16` | `workload-subnet (10.222.0.0/24)` |
 
 > ⚠️ **Note** : Le “On-Prem” est entièrement simulé dans Azure pour des raisons pratiques. En production, il s’agirait d’un réseau physique ou d’un autre cloud.
 
