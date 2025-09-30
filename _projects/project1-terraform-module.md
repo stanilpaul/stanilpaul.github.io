@@ -13,8 +13,9 @@ github_repo: https://github.com/stanilpaul/project1_terraform_module
 tf_registry: https://registry.terraform.io/search/modules?q=stanilpaul
 ---
 
-<video autoplay muted loop playsinline preload="metadata" width="100%">
+<video autoplay muted loop playsinline controls preload="metadata" width="100%">
   <source src="{{ '/assets/videos/demo-pro1-terra-module.mp4' | relative_url }}" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
 </video>
 
 > 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
@@ -43,54 +44,115 @@ Souvent, ces équipes doivent :
 
 ---
 
----
-
 ## 📸 Galerie de captures d’écran
 
-<div class="screenshots-gallery">
-  <a href="{{ '/assets/images/pro1-terra-module/public_module.png' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/pro1-terra-module/public_module.png' | relative_url }}" alt="Public Terraform Module" />
+<div class="screenshots-grid">
+  <a href="{{ '/assets/images/pro1-terra-module/public_module.png' | relative_url }}" target="_blank" title="Public Terraform Module">
+    <img src="{{ '/assets/images/pro1-terra-module/public_module.png' | relative_url }}" alt="Public Terraform Module" loading="lazy" />
+    <span>Public Terraform Module</span>
   </a>
-  <a href="{{ '/assets/images/pro1-terra-module/private_module.png' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/pro1-terra-module/private_module.png' | relative_url }}" alt="Private Terraform Module" />
+  <a href="{{ '/assets/images/pro1-terra-module/private_module.png' | relative_url }}" target="_blank" title="Private Terraform Module">
+    <img src="{{ '/assets/images/pro1-terra-module/private_module.png' | relative_url }}" alt="Private Terraform Module" loading="lazy" />
+    <span>Private Terraform Module</span>
   </a>
-  <a href="{{ '/assets/images/pro1-terra-module/networking.png' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/pro1-terra-module/networking.png' | relative_url }}" alt="Networking" />
+  <a href="{{ '/assets/images/pro1-terra-module/github.png' | relative_url }}" target="_blank" title="GitHub Repos">
+    <img src="{{ '/assets/images/pro1-terra-module/github.png' | relative_url }}" alt="GitHub" loading="lazy" />
+    <span>GitHub Repos</span>
   </a>
-  <a href="{{ '/assets/images/pro1-terra-module/compute.png' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/pro1-terra-module/compute.png' | relative_url }}" alt="Bastion Access" />
+  <a href="{{ '/assets/images/pro1-terra-module/networking.png' | relative_url }}" target="_blank" title="Networking Module">
+    <img src="{{ '/assets/images/pro1-terra-module/networking.png' | relative_url }}" alt="Networking" loading="lazy" />
+    <span>Networking</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/compute.png' | relative_url }}" target="_blank" title="Compute Module">
+    <img src="{{ '/assets/images/pro1-terra-module/compute.png' | relative_url }}" alt="Compute" loading="lazy" />
+    <span>Compute</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/lb.png' | relative_url }}" target="_blank" title="Load Balancing Module">
+    <img src="{{ '/assets/images/pro1-terra-module/lb.png' | relative_url }}" alt="Load balancing" loading="lazy" />
+    <span>Load Balancing</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/bastion.png' | relative_url }}" target="_blank" title="Bastion Module">
+    <img src="{{ '/assets/images/pro1-terra-module/bastion.png' | relative_url }}" alt="Bastion" loading="lazy" />
+    <span>Bastion</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/backend_github.png' | relative_url }}" target="_blank" title="Backend GitHub">
+    <img src="{{ '/assets/images/pro1-terra-module/backend_github.png' | relative_url }}" alt="Backend Github" loading="lazy" />
+    <span>Backend GitHub</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/network_apply.png' | relative_url }}" target="_blank" title="Network Apply">
+    <img src="{{ '/assets/images/pro1-terra-module/network_apply.png' | relative_url }}" alt="Network Apply" loading="lazy" />
+    <span>Network Apply</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/4containers.png' | relative_url }}" target="_blank" title="4 State Containers">
+    <img src="{{ '/assets/images/pro1-terra-module/4containers.png' | relative_url }}" alt="4 Containers" loading="lazy" />
+    <span>4 Containers</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/remote-state.png' | relative_url }}" target="_blank" title="Remote State Files">
+    <img src="{{ '/assets/images/pro1-terra-module/remote-state.png' | relative_url }}" alt="Remote state" loading="lazy" />
+    <span>Remote State</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/web1.png' | relative_url }}" target="_blank" title="Web Site 1 (External LB)">
+    <img src="{{ '/assets/images/pro1-terra-module/web1.png' | relative_url }}" alt="Web 1" loading="lazy" />
+    <span>Web 1 (External)</span>
+  </a>
+  <a href="{{ '/assets/images/pro1-terra-module/web2.png' | relative_url }}" target="_blank" title="Web Site 2 (Internal LB)">
+    <img src="{{ '/assets/images/pro1-terra-module/web2.png' | relative_url }}" alt="Web 2" loading="lazy" />
+    <span>Web 2 (Internal)</span>
   </a>
 </div>
 
 <style>
-.screenshots-gallery {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 16px 0;
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
   margin: 32px 0;
-  scroll-snap-type: x mandatory;
 }
 
-.screenshots-gallery img {
-  flex: 0 0 auto;
-  width: 300px;
+.screenshots-grid a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.screenshots-grid a:hover {
+  transform: translateY(-4px);
+}
+
+.screenshots-grid img {
+  width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  scroll-snap-align: start;
-  transition: transform 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease;
 }
 
-.screenshots-gallery img:hover {
-  transform: scale(1.05);
+.screenshots-grid a:hover img {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.screenshots-grid span {
+  margin-top: 8px;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: 500;
+  color: #555;
 }
 
 @media (max-width: 768px) {
-  .screenshots-gallery img {
-    width: 240px;
+  .screenshots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .screenshots-grid img {
     height: 160px;
+  }
+  .screenshots-grid span {
+    font-size: 0.85em;
   }
 }
 </style>
@@ -376,3 +438,18 @@ Dans la vidéo :
 - Écrire des tests d’intégration avec Terratest
 - Containeriser les apps avec Docker + Azure Container Instances
 - Ajouter du monitoring avec Azure Monitor + Grafana
+
+---
+
+## 🧠 Ce que j’ai appris grâce à ce projet
+
+> *“Les erreurs ont été mes meilleurs professeurs.”*
+
+- ✅ Gérer les dépendances entre modules sans créer de spaghetti
+- ✅ Comprendre pourquoi Ubuntu 18.04 disparaît soudainement 😅 → gestion du cycle de vie des images
+- ✅ Maîtriser `sensitive = true` et ne jamais exposer un mot de passe par accident
+- ✅ Automatiser la doc avec `terraform-docs` → gagner 2h/semaine en maintenance
+- ✅ Travailler avec des state files séparés → éviter les conflits en équipe
+- ✅ Simuler un workflow multi-équipes → penser comme un architecte, pas juste un dev
+
+➡️ Ce projet m’a transformé d’un utilisateur de Terraform à un **concepteur d’infrastructures modulaires**.
