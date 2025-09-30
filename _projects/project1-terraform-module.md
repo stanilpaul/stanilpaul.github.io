@@ -2,8 +2,8 @@
 title: "Architecture modulaire Azure avec Terraform : Networking, Compute, Load Balancing & Bastion"
 excerpt: "Projet complet d'infrastructure as code (IaC) sur Azure avec Terraform. Découpage en modules indépendants (Networking, Compute, LB, Bastion), gestion de state files séparés, respect des bonnes pratiques DevOps et sécurité. Simule une collaboration entre équipes IT dans un environnement de production."
 header:
-  overlay_image: /assets/images/terraform-azure-hero.jpg
-  teaser: /assets/images/terraform-azure-teaser.png
+  overlay_image: /assets/images/project1-terraform-module-hero.png
+  teaser: /assets/images/project1-terraform-module-teaser.png
 tags: [Azure, Terraform, IaC, Infrastructure as Code, Cloud Engineer, DevOps, Modular Architecture, Remote State, Load Balancer, Bastion, NSG, Cloud-init]
 toc: true
 toc_sticky: true
