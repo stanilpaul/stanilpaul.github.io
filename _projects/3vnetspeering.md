@@ -42,37 +42,33 @@ Dans un scénario multi-région (ex: filiales internationales, DRP, compliance g
 ## 📸 Galerie de captures d’écran
 
 <div class="screenshots-grid">
-  <a href="{{ '/assets/images/pro2-terra-peering/architecture.png' | relative_url }}" target="_blank" title="Architecture Globale">
-    <img src="{{ '/assets/images/pro2-terra-peering/architecture.png' | relative_url }}" alt="Architecture Globale" loading="lazy" />
-    <span>Architecture Globale</span>
+  <a href="{{ '/assets/images/3vnetspeering/vsc.png' | relative_url }}" target="_blank" title="Architecture Globale">
+    <img src="{{ '/assets/images/3vnetspeering/vsc.png' | relative_url }}" alt="Architecture Globale" loading="lazy" />
+    <span>VSC</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/peering-links.png' | relative_url }}" target="_blank" title="Peering Full Mesh">
-    <img src="{{ '/assets/images/pro2-terra-peering/peering-links.png' | relative_url }}" alt="Peering Full Mesh" loading="lazy" />
-    <span>Peering Full Mesh</span>
+  <a href="{{ '/assets/images/3vnetspeering/github.png' | relative_url }}" target="_blank" title="Peering Full Mesh">
+    <img src="{{ '/assets/images/3vnetspeering/github.png' | relative_url }}" alt="Peering Full Mesh" loading="lazy" />
+    <span>Github</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/dns-zone.png' | relative_url }}" target="_blank" title="Private DNS Zone">
-    <img src="{{ '/assets/images/pro2-terra-peering/dns-zone.png' | relative_url }}" alt="Private DNS Zone" loading="lazy" />
-    <span>Private DNS Zone</span>
+  <a href="{{ '/assets/images/3vnetspeering/apply.png' | relative_url }}" target="_blank" title="Private DNS Zone">
+    <img src="{{ '/assets/images/3vnetspeering/apply.png' | relative_url }}" alt="Private DNS Zone" loading="lazy" />
+    <span>Terraform Apply on VSC</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/linux-web.png' | relative_url }}" target="_blank" title="Apache2 Linux VM">
-    <img src="{{ '/assets/images/pro2-terra-peering/linux-web.png' | relative_url }}" alt="Apache2 Linux VM" loading="lazy" />
-    <span>Apache2 Linux VM</span>
+  <a href="{{ '/assets/images/3vnetspeering/portail.png' | relative_url }}" target="_blank" title="Apache2 Linux VM">
+    <img src="{{ '/assets/images/3vnetspeering/portail.png' | relative_url }}" alt="Apache2 Linux VM" loading="lazy" />
+    <span>Sur le portail</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/windows-iis.png' | relative_url }}" target="_blank" title="IIS Windows VM">
-    <img src="{{ '/assets/images/pro2-terra-peering/windows-iis.png' | relative_url }}" alt="IIS Windows VM" loading="lazy" />
-    <span>IIS Windows VM</span>
+  <a href="{{ '/assets/images/3vnetspeering/resultat1.png' | relative_url }}" target="_blank" title="IIS Windows VM">
+    <img src="{{ '/assets/images/3vnetspeering/resultat1.png' | relative_url }}" alt="IIS Windows VM" loading="lazy" />
+    <span>Apache server</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/nsg-rules.png' | relative_url }}" target="_blank" title="NSG Rules">
-    <img src="{{ '/assets/images/pro2-terra-peering/nsg-rules.png' | relative_url }}" alt="NSG Rules" loading="lazy" />
-    <span>NSG Rules</span>
+  <a href="{{ '/assets/images/3vnetspeering/resultat2.png' | relative_url }}" target="_blank" title="NSG Rules">
+    <img src="{{ '/assets/images/3vnetspeering/resultat2.png' | relative_url }}" alt="NSG Rules" loading="lazy" />
+    <span>Apache server 2</span>
   </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/plan-output.png' | relative_url }}" target="_blank" title="Terraform Plan">
-    <img src="{{ '/assets/images/pro2-terra-peering/plan-output.png' | relative_url }}" alt="Terraform Plan" loading="lazy" />
-    <span>Terraform Plan</span>
-  </a>
-  <a href="{{ '/assets/images/pro2-terra-peering/apply-success.png' | relative_url }}" target="_blank" title="Apply Success">
-    <img src="{{ '/assets/images/pro2-terra-peering/apply-success.png' | relative_url }}" alt="Apply Success" loading="lazy" />
-    <span>Apply Success</span>
+  <a href="{{ '/assets/images/3vnetspeering/ping.png' | relative_url }}" target="_blank" title="Terraform Plan">
+    <img src="{{ '/assets/images/3vnetspeering/ping.png' | relative_url }}" alt="Terraform Plan" loading="lazy" />
+    <span>Ping</span>
   </a>
 </div>
 
@@ -156,22 +152,14 @@ Dans un scénario multi-région (ex: filiales internationales, DRP, compliance g
 ### Schéma d’architecture
 
 <div style="overflow-x:auto; text-align:center;">
-  <a href="{{ '/assets/images/3VnetPeering.svg' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/3vnetpeering.svg' | relative_url }}" 
+  <a href="{{ '/assets/images/3vnetspeering.svg' | relative_url }}" target="_blank">
+    <img src="{{ '/assets/images/3vnetspeering.svg' | relative_url }}" 
          style="width:100%; max-width: 1400px; height:auto; border: 1px solid #eee; border-radius: 8px;" 
          alt="Architecture Terraform Azure Multi-Région Peering + DNS">
   </a>
   <p><em>Cliquez pour agrandir</em></p>
 </div>
 
-<div style="overflow-x:auto; text-align:center;">
-  <a href="{{ '/assets/images/diagram-projec1.svg' | relative_url }}" target="_blank">
-    <img src="{{ '/assets/images/diagram-projec1.svg' | relative_url }}" 
-         style="width:100%; max-width: 1200px; height:auto; border: 1px solid #eee; border-radius: 8px;" 
-         alt="Architecture Terraform Azure Multi-Région Peering + DNS">
-  </a>
-  <p><em>Cliquez pour agrandir</em></p>
-</div>
 ---
 
 ## 🧩 Découpage logique du code Terraform
