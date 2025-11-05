@@ -13,13 +13,17 @@ github_repo: https://github.com/stanilpaul/terraform_azure_labs/tree/main/1.Virt
 ---
 
 <video autoplay muted loop playsinline controls preload="metadata" width="100%">
-  <source src="{{ '/assets/videos/demo-pro2-terra-peering.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/videos/3vnetspeering.mp4' | relative_url }}" type="video/mp4">
   Votre navigateur ne supporte pas la vidéo.
 </video>
+
 
 > 📅 **Date de réalisation** : {{ page.completion_date | date: "%d %B %Y" }}
 
 ---
+<!-- ################### -->
+<!-- bundle exec jekyll serve -->
+<!-- ################### -->
 
 ## 🎯 Problématique & Contexte métier
 
