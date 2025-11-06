@@ -3,7 +3,7 @@ layout: splash
 title: "Ingénieur Cloud Azure"
 excerpt: "Azure • Terraform • CI/CD • SRE — Certifié AZ-104"
 header:
-  overlay_image: /assets/images/hero.jpg   # image de fond (optionnelle)
+  overlay_image: /assets/images/hero5.png   # image de fond (optionnelle)
   overlay_filter: 0.3
   actions:
     - label: "Voir mes projets"

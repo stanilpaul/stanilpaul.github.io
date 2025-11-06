@@ -2,8 +2,8 @@
 title: "Multi-Région Azure avec Peering VNet & DNS Privé : Automatisation Terraform Complète"
 excerpt: "Déploiement automatisé de 3 réseaux virtuels Azure dans 3 régions (France, US, Inde), connectés via peering full-mesh, avec résolution DNS interne, VMs Linux/Windows, NSG dynamiques, et gestion de coûts via Spot Instances. Infrastructure as Code avancée avec Terraform."
 header:
-  overlay_image: /assets/images/project2-terraform-peering-hero.png
-  teaser: /assets/images/project2-terraform-peering-teaser.png
+  overlay_image: /assets/images/peeringvnet-dnsprive-teaser.png
+  teaser: /assets/images/peeringvnet-dnsprive.png
 tags: [Azure, Terraform, IaC, Virtual Network Peering, Private DNS Zone, Multi-Region, Cloud Engineer, DevOps, NSG, Bastion Alternative, Spot VM, Cloud-init, DNS Resolution]
 toc: true
 toc_sticky: true
